@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Images from "../utils/images";
 
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -10,7 +11,6 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
     if (!email || !password) return;
 
     setSuccess("✅ Login Successful!");
@@ -21,72 +21,80 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-left">
-        <img src={Images.Login} alt="Login" />
-      </div>
+    <>
+      {/* Cards Container */}
+      <div className="cards-container">
+        {/* Left Card */}
+        <div className="card login-left-card">
+          <img src={Images.Login} alt="Doctor Illustration" />
+          <h3>Your Health, Our Priority</h3>
+          <p>Connect with top specialists and manage health records securely.</p>
+        </div>
 
-      <div className="login-right">
-        <h2>Welcome Back</h2>
-        <p>Securely manage your appointments and health records.</p>
+        {/* Right Card */}
+        <div className="card login-right-card">
+          <h2>Welcome Back</h2>
+          <p>Securely manage your appointments and health records.</p>
 
-        <form onSubmit={handleLogin}>
-          <label>Email Address</label>
-          <input
-            type="email"
-            placeholder="name@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-
-          <label>Password</label>
-          <div className="password-input">
+          <form onSubmit={handleLogin}>
+            <label>Email Address</label>
             <input
-              type={showPassword ? "text" : "password"}
-              placeholder="********"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              type="email"
+              placeholder="name@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? "Hide" : "Show"}
-            </button>
-          </div>
 
-          <div className="options">
-            <div className="remember-me">
+            <label>Password</label>
+            <div className="password-input">
               <input
-                type="checkbox"
-                id="remember"
-                checked={remember}
-                onChange={() => setRemember(!remember)}
+                type={showPassword ? "text" : "password"}
+                placeholder="********"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
               />
-              <label htmlFor="remember">Remember me</label>
+              <button
+                type="button"
+                className="show-btn"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "Hide" : "Show"}
+              </button>
             </div>
 
-            <a href="#">Forgot Password?</a>
-          </div>
+            <div className="options">
+              <div className="remember-me">
+                <input
+                  type="checkbox"
+                  id="remember"
+                  checked={remember}
+                  onChange={() => setRemember(!remember)}
+                />
+                <label htmlFor="remember">Remember me</label>
+              </div>
 
-          {success && <p className="success-text">{success}</p>}
+              <a href="#">Forgot Password?</a>
+            </div>
 
-          <button type="submit" className="login-btn">
-            Log In
-          </button>
-        </form>
+            {success && <p className="success-text">{success}</p>}
 
-        <p>
-          Don't have an account? <a href="#">Sign Up</a>
-        </p>
+            <button type="submit" className="login-btn">
+              Log In
+            </button>
+          </form>
 
-        <p className="encrypted">
-          Your data is encrypted and HIPAA compliant.
-        </p>
+          <p className="signup">
+            Don't have an account? <a href="#">Sign Up</a>
+          </p>
+
+          <p className="encrypted">
+            Your data is encrypted and HIPAA compliant.
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
