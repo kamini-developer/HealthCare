@@ -64,19 +64,20 @@ function Login() {
               </button>
             </div>
 
-            <div className="options">
-              <div className="remember-me">
-                <input
-                  type="checkbox"
-                  id="remember"
-                  checked={remember}
-                  onChange={() => setRemember(!remember)}
-                />
-                <label htmlFor="remember">Remember me</label>
-              </div>
+      <div className="options">
+  <div className="remember-me">
+    <input
+      type="checkbox"
+      id="remember"
+      checked={remember}
+      onChange={() => setRemember(!remember)}
+    />
+    <label htmlFor="remember">Remember me</label>
+  </div>
 
-              <a href="#">Forgot Password?</a>
-            </div>
+  <a href="#">Forgot Password?</a>
+</div>
+
 
             {success && <p className="success-text">{success}</p>}
 

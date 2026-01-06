@@ -5,14 +5,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+
 }
+
 /* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 25px;
-  background-color:#1abc9c;
+  background-color:#347266;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   position: relative;
   z-index: 1000;
@@ -38,7 +40,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 25px;
+  gap: 50px;
 }
 
 .navbar ul li a {
@@ -1337,12 +1339,12 @@ button.message-btn:hover {
 
 
 /* CARDS CONTAINER */
+
 .cards-container {
   display: flex;
   justify-content: center;
   gap: 100px; /* space between cards */
   max-width: 900px;
- 
   margin: 90px auto;
   flex-wrap: wrap; /* stack on small screens */
 }
@@ -1393,15 +1395,17 @@ button.message-btn:hover {
 }
 
 .login-right-card p {
+  text-align: center;
   color: #777;
   margin-bottom: 20px;
   font-size: 14px;
 }
 
 .login-right-card label {
+    width: 100%;
   font-size: 14px;
   margin-top: 15px;
-  display: block;
+  /* display: block; */
 }
 
 .login-right-card input {
@@ -1415,6 +1419,27 @@ button.message-btn:hover {
 
 .login-right-card input:focus {
   border-color: #16a085;
+}
+
+/* REMEMBER ME */ 
+.remember-me {
+  display: flex;
+  align-items: center;      /* vertically center the checkbox and label */
+  gap: 8px;                 /* space between checkbox and text */
+  font-size: 13px;
+}
+
+.remember-me input {
+  width: 16px;              /* fixed size for consistency */
+  height: 16px;
+  accent-color: #16a085;    /* modern green color for checkbox */
+  cursor: pointer;
+}
+
+.remember-me label {
+  cursor: pointer;          /* clicking label toggles checkbox */
+  color: #333;
+  font-weight: 500;
 }
 
 /* PASSWORD INPUT */
@@ -1459,6 +1484,7 @@ button.message-btn:hover {
   font-size: 16px;
   cursor: pointer;
   margin-top: 10px;
+
 }
 
 .login-btn:hover {
